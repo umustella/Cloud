@@ -64,7 +64,7 @@ jobs:
           template-path: ${{ env.TEMPLATE_PATH}}
           actions: ${{ env.ACTIONS }}
           resources: ${{ env.RESOURCES }}
-          region: ${{ env.REGION }}
+          region: us-east-1
       # Print result from CHECK_ACCESS_NOT_GRANTED check
       - name: Print the result for CheckAccessNotGranted check
         if: success() || failure()
