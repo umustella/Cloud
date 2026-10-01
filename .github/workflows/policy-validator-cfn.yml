@@ -42,7 +42,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@e3dd6a429d7300a6a4c196c26e071d42e0343502
         with:
           role-to-assume: ${{ env.AWS_ROLE }}
-          aws-region: ${{ env.REGION }}
+          aws-region: us-east-1
       # Run the VALIDATE_POLICY check. More configuration details here - https://github.com/aws-actions/cloudformation-aws-iam-policy-validator
       - name: Run AWS AccessAnalyzer ValidatePolicy check
         id: run-aws-validate-policy
@@ -50,7 +50,7 @@ jobs:
         with:
           policy-check-type: "VALIDATE_POLICY"
           template-path: ${{ env.TEMPLATE_PATH}}
-          region: ${{ env.REGION }}
+          region: us-east-1
       # Print result from VALIDATE_POLICY check
       - name: Print the result for ValidatePolicy check
         if: success() || failure()
